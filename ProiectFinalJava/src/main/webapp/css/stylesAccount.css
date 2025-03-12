@@ -1,0 +1,185 @@
+/* General Body & Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navbar (Menu Bar) */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    width: 100%;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    display: block;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #4CAF50;
+}
+
+nav ul li a.active {
+    background-color: #007bff;
+}
+
+/* Sidebar Styling (Now in a row) */
+.sidebar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    width: 100%;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #4CAF50;
+}
+
+.sidebar nav ul li a.active {
+    background-color: #007bff;
+}
+
+/* Centered Main Content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.settings h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007bff;
+}
+
+/* Buttons Styling */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.save {
+    background-color: #5d9bfc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.save:hover {
+    background-color: #4a8cd1;
+}
+
+.cancel {
+    background-color: #ccc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cancel:hover {
+    background-color: #999;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
