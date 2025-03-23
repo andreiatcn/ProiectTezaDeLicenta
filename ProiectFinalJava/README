@@ -1,0 +1,22 @@
+# Setup in docker
+
+### Pornim containerele
+```docker-compose up``` porneste mysql, elasticsearch, logstash in docker
+
+### Pentru a crea baza de date
+Folosim o interfață pentru a ne conecta la baza de date
+Rulăm pentru a crea bd
+```
+CREATE DATABASE prfinal
+    DEFAULT CHARACTER SET = 'utf8mb4';
+````
+
+### Folosim backup ul la bd
+```
+docker exec -i 24630ad7bfe7b1338b0acc28e90f937f0c1248cb3cc5dd79aa12754e566c31f0 mysql -u root -pprfinal prfinal < "C:\Users\username\source\repos\ProiectTezaDeLicenta\AndreiaSQL.sql"
+```
+
+```24630ad7bfe7b1338b0acc28e90f937f0c1248cb3cc5dd79aa12754e566c31f0``` trebuie de schimbat cu id la containerul local
+```"C:\Users\username\source\repos\ProiectTezaDeLicenta\AndreiaSQL.sql"``` trebuie de schimbat cu locația la fișierul sql de pe PC
+
+

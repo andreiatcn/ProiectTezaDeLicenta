@@ -10,25 +10,21 @@
                            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    
-    <context:annotation-config/>   
-    <context:component-scan base-package="com.iucosoft.proiectfinaljava.util"/>  
-    <context:component-scan base-package="com.iucosoft.proiectfinaljava.entities"/>  
-    <context:component-scan base-package="com.iucosoft.proiectfinaljava.dao"/>  
-    <context:component-scan base-package="com.iucosoft.proiectfinaljava.services"/>  
-    
-     
+    <context:annotation-config/>
+    <context:component-scan base-package="com.iucosoft.proiectfinaljava.util"/>
+    <context:component-scan base-package="com.iucosoft.proiectfinaljava.entities"/>
+    <context:component-scan base-package="com.iucosoft.proiectfinaljava.dao"/>
+    <context:component-scan base-package="com.iucosoft.proiectfinaljava.services"/>
     <tx:annotation-driven/>
-    
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/prfinal"/>
-        <property name="username" value="prfinal"/>
+        <property name="username" value="root"/>
         <property name="password" value="prfinal"/>
     </bean>
-    
+
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-    
+
         <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
         <property name="dataSource" ref="dataSource"/>
         <property name="hibernateProperties">
@@ -42,7 +38,7 @@
         <!-- Add this property to scan for entities -->
         <property name="packagesToScan" value="com.iucosoft.proiectfinaljava.entities"/>
     </bean>
-    
+
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>

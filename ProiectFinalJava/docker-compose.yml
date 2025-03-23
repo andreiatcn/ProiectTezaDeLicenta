@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: app-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: prfinal
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  elasticsearch:
+    image: elasticsearch:8.12.2
+    container_name: app-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
+  logstash:
+    image: logstash:8.12.2
+    container_name: app-logstash
+    depends_on:
+      - elasticsearch
+      - mysql
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./mysql-connector-j-8.3.0.jar:/usr/share/logstash/mysql-connector-j-8.3.0.jar
+    ports:
+      - "5044:5044"
+
+volumes:
+  mysql_data:
+  es_data:
