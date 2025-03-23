@@ -29,7 +29,9 @@ public class dispatcher {
             case "login":
                 return "loginPage"; 
             case "registrationPage":
-                return "registrationPage";    
+                return "registrationPage";
+            case "productSearch":
+                return "productSearchPage";    
             default:
                 return "error";  // Returns error.jsp if the page name is invalid
         }

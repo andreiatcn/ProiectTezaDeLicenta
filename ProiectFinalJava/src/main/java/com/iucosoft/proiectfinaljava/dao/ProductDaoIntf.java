@@ -11,4 +11,5 @@ public interface ProductDaoIntf extends GenericDaoIntf<Product, Integer> {
 
     List<Product> findAll();
 
+    List<Product> findByNameContaining(String name);
 }

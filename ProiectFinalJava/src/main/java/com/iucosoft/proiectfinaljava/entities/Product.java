@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -31,6 +32,7 @@ public class Product implements java.io.Serializable {
     private float greutate;
     private Date dataProducerii;
     private byte[] image;
+    private String base64Image;
 
     public Product() {
     }
@@ -120,6 +122,15 @@ public class Product implements java.io.Serializable {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    @Transient
+    public String getBase64Image() {
+        return base64Image;
+    }
+
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
     }
 
     @Temporal(TemporalType.DATE)

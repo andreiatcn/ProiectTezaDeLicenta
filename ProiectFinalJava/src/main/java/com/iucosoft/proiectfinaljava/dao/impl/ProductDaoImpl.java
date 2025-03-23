@@ -34,4 +34,18 @@ public class ProductDaoImpl extends GenericDaoImpl<Product, Integer> implements 
         }
     }
 
+    @Override
+    public List<Product> findByNameContaining(String name) {
+        Session session = sessionFactory.openSession();
+        try {
+            String hql = "FROM Product WHERE lower(name) LIKE lower(:productName)";
+            Query<Product> query = session.createQuery(hql, Product.class);
+            query.setParameter("productName", "%" + name + "%");
+            return query.getResultList();
+        } catch (Exception e) {
+            LOG.severe("Error searching products by name: " + e.getMessage());
+            return Collections.emptyList();
+        }
+    }
+
 }

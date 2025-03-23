@@ -11,4 +11,5 @@ public interface ProductServiceIntf extends GenericServiceIntf<Product, Integer>
 
     List<Product> findAll();
     
+    List<Product> findByNameContaining(String name);
 }

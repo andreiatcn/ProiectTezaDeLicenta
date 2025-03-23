@@ -32,4 +32,16 @@ public class ProductServiceImpl extends GenericServiceImpl<Product, Integer> imp
 
     }
 
+    @Override
+    public List<Product> findByNameContaining(String name) {
+        List<Product> list = new ArrayList<>();
+        try {
+            list = productDao.findByNameContaining(name);
+            System.out.println("Searched products by name: " + name + ", found: " + list.size());
+        } catch (Exception e) {
+            LOG.severe("Error searching products by name: " + e.toString());
+        }
+        return list;
+    }
+
 }

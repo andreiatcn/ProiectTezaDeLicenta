@@ -15,6 +15,7 @@
     <context:component-scan base-package="com.iucosoft.proiectfinaljava.entities"/>
     <context:component-scan base-package="com.iucosoft.proiectfinaljava.dao"/>
     <context:component-scan base-package="com.iucosoft.proiectfinaljava.services"/>
+    <context:component-scan base-package="com.iucosoft.proiectfinaljava.config"/>
     <tx:annotation-driven/>
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
